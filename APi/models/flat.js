@@ -10,7 +10,8 @@ const FlatSchema = new mongoose.Schema(
     attachedbath:{type:Number,required:true},
     dining:{type:Number,required:true},
     drawing:{type:Number,required:true},
-    area:{type:Number,required:true}
+    area:{type:Number,required:true},
+    status:{type:Boolean,default:false}
   },
   {
     timestamps: true,
