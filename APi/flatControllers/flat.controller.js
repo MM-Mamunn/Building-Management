@@ -22,6 +22,16 @@ const flatAll = async (req, res) => {
     }
   };
   
+const flatOne= async (req, res) => {
+    try {
+      const { flat } = req.params;
+      const all = await Flat.find({flat});
+      res.status(200).json(all);
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+  };
+  
 
 
-export {flatNew , flatAll};
+export {flatNew , flatAll,flatOne};

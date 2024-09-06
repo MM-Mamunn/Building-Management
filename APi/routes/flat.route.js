@@ -1,9 +1,10 @@
 import express from 'express';
 const router = express.Router();
 
-import { flatNew,flatAll } from '../flatControllers/flat.controller.js';
+import { flatNew,flatAll,flatOne } from '../flatControllers/flat.controller.js';
 router.post('/new',flatNew);
 router.get('/all',flatAll);
+router.get('/one/:flat',flatOne);
 
 // router.post('/new',signupNew);
 // router.post('/usercheck/',userCheck);
