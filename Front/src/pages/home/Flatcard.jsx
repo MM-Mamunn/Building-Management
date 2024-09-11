@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import Adminside from "../sides/Adminside";
 import axios from "axios";
 import Nav from "../components/nav";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate  } from "react-router-dom";
 function Flatcard() {
+  const navigate = useNavigate();
   const [flat, setflat] = useState([]);
   const { id } = useParams();
 
@@ -24,19 +25,24 @@ function Flatcard() {
     fetchallflat();
   }, []);
 
+  const handleClick = (id) => {
+    navigate(`/flat/book/${id}`);
+  };
+
+
   return (
     <>
     <Nav />
       <div className="flex justify-between mx-1 gap-1">
-        <div className="side h-[87vh] w-[30%]  border-black border-2">
+        <div className="side h-[87vh] w-[30%]">
           <Adminside />
         </div>
-        <div className="body scrollbar-thin scrollbar-thumb-blue-700  scrollbar-track-gray-200 h-[87vh] my-1 w-full overflow-scroll overflow-x-clip flex flex-col items-center gap-1  ">
+        <div className="body bg-blue-200 rounded-lg scrollbar-thin scrollbar-thumb-blue-700  scrollbar-track-gray-200 h-[87vh] my-1 w-full overflow-scroll overflow-x-clip flex flex-col items-center gap-1  ">
           {flat?.map((item, index) => (
             <div key={index}>
               <div className="w-[69vw] text-center p-8 bg-blue-200 border border-gray-200 rounded-lg shadow dark:border-blue-700">
                 <div className="bg-blue-100 p-1 rounded-xl">
-                <div href="#">
+                <div>
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-black ">
                     <svg
                       className="inline"
@@ -197,7 +203,16 @@ function Flatcard() {
                   }
                 >
                   {item.status == true ? "Not " : ""}Available
-                </div>
+                </div>{
+                  item.status == false?
+                  <button
+                  className="border-2  border-blue-950 text-white px-2 py-1 disabled:bg-blue-900 rounded-lg bg-blue-600"
+                  onClick={() => handleClick(item.flat)}
+                  >
+                  Enter
+                </button>
+                :""
+                }
               </div>
             </div>
             </div>

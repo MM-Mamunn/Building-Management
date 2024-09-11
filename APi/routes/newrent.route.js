@@ -1,8 +1,9 @@
 import express from 'express';
 const router = express.Router();
 
-import { rentNew } from '../newrentControllers/newrent.controller.js';
+import { rentNew , ReqRent} from '../newrentControllers/newrent.controller.js';
 router.post('/new',rentNew);
+router.post('/book',ReqRent);
 
 // router.post('/new',signupNew);
 // router.post('/usercheck/',userCheck);

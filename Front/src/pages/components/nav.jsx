@@ -2,10 +2,10 @@ import React from 'react'
 
 function Nav() {
   return (
-    <div>
+    <div >
       
 
-<nav class="bg-white border-gray-200 dark:bg-gray-900">
+<nav class=" border-4  border-[#f59e0b] bg-white dark:bg-gray-900">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
     <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
         <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
@@ -38,6 +38,7 @@ function Nav() {
     </div>
   </div>
 </nav>
+  {/* <div class=" mx-2 rounded-3xl border-4  border-red-700"></div> */}
 
     </div>
   )

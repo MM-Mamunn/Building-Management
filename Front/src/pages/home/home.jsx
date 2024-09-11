@@ -25,11 +25,11 @@ function Home() {
   return (
     <>
     <Nav />
-      <div className="flex justify-between mx-1 gap-1">
-        <div className="side h-[87vh] w-[30%]  border-black border-2">
+      <div className="flex bg-gray-900 justify-between px-1 gap-1">
+        <div className="side h-[87vh] w-[30%] ">
           <Adminside />
         </div>
-        <div className="body  bg-blue-200 scrollbar-thin  scrollbar-thumb-blue-700  scrollbar-track-gray-200 h-[87vh] my-1 w-full overflow-scroll overflow-x-clip flex flex-col items-center gap-3  ">
+        <div className="body rounded-lg bg-blue-200 scrollbar-thin  scrollbar-thumb-blue-700  scrollbar-track-gray-200 h-[87vh] my-1 w-full overflow-scroll overflow-x-clip flex flex-col items-center gap-3  ">
           {flat?.map((item, index) => (
             <div key={index} className="flex text-center items-center justify-between w-[50vw] bg-blue-500 px-2  rounded-lg py-1">
              <NavLink className="font-bold text-white " to ={`/flat/one/${item.flat}`}>
